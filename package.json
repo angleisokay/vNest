@@ -1,0 +1,14 @@
+{
+  "name": "vnest",
+  "version": "1.0.0",
+  "description": "Velox's DOM manipulation package.",
+  "main": "vNest.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dom"
+  ],
+  "author": "Eduardo V",
+  "license": "ISC"
+}
