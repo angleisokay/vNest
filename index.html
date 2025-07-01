@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>vNest</title>
+    </head>
+    <body>
+        <script type="module">
+            import vNest from 'https://cdn.jsdelivr.net/npm/vnest@1.0.0/vNest.min.js'
+            import facts from 'https://raw.githubusercontent.com/angleisokay/vNest/refs/heads/main/fun-facts.js'
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+            }
+            const homepage = vNest.createPage()
+            document.body.appendChild(pageInstance.page)
+            pageInstance.docStyle({
+                'background-color': 'darkgray',
+                'color': 'white'
+            })
+            pageInstance.createElement('h1', { 
+              textContent: 'vNest: Velox\'s DOM manipulation package', 
+              id: 'hpTitle',
+              style: {
+                'font-family': 'sans-serif'
+              }
+            })
+            pageInstance.createElement('h3', {
+              textContent: '`Fun fact: This page was made with vNest!`',
+              id: 'hpFunFact',
+              style: {
+                'font-family': 'monospace'
+              }
+            })
+            pageInstance.createElement('button', {
+              textContent: 'Regenerate fun fact',
+              id: 'hpFactButton',
+              style: {
+                'font-family': 'serif'
+              },
+              clickAction: () => {
+                 pageInstance.modifyProperty('hpFunFact', {
+                   'text-content': facts[getRandomInt(49)]
+                 })
+              }
+            })
+        </script>
+
+    </body>
+</html>
