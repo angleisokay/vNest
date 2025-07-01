@@ -13,33 +13,33 @@
                 return Math.floor(Math.random() * max);
             }
             const homepage = vNest.createPage()
-            document.body.appendChild(pageInstance.page)
-            pageInstance.docStyle({
+            document.body.appendChild(homepage.page)
+            homepage.docStyle({
                 'background-color': 'darkgray',
                 'color': 'white'
             })
-            pageInstance.createElement('h1', { 
+            homepage.createElement('h1', { 
               textContent: 'vNest: Velox\'s DOM manipulation package', 
               id: 'hpTitle',
               style: {
                 'font-family': 'sans-serif'
               }
             })
-            pageInstance.createElement('h3', {
+            homepage.createElement('h3', {
               textContent: '`Fun fact: This page was made with vNest!`',
               id: 'hpFunFact',
               style: {
                 'font-family': 'monospace'
               }
             })
-            pageInstance.createElement('button', {
+            homepage.createElement('button', {
               textContent: 'Regenerate fun fact',
               id: 'hpFactButton',
               style: {
                 'font-family': 'serif'
               },
               clickAction: () => {
-                 pageInstance.modifyProperty('hpFunFact', {
+                 homepage.modifyProperty('hpFunFact', {
                    'text-content': facts[getRandomInt(49)]
                  })
               }
