@@ -6,10 +6,9 @@
         <title>vNest</title>
     </head>
     <body>
+    <script type="module"> import vnest from https://cdn.jsdelivr.net/npm/vnest@1.0.0/+esm </script>
     <script type="module">
       (async () => {
-        const { default: vNest } = await import('https://cdn.jsdelivr.net/npm/vnest@1.0.0/vNest.min.js')
-
         const facts = await fetch('https://raw.githubusercontent.com/angleisokay/vNest/refs/heads/main/fun-facts.js')
           .then(res => res.text())
           .then(text => eval(text))
